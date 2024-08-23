@@ -1,0 +1,9 @@
+[package]
+name = "dcrs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bigdecimal = "0.4.5"
+clap = { version = "4.5.16", features = ["derive"] }
+colored = "2.1.0"
