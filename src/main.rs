@@ -40,7 +40,9 @@ fn prompt() -> String {
 
 fn parse(input: String, stack: &mut Vec<Rational>) {
     for t in input.split_whitespace() {
-        if t.chars().all(|c| c.is_numeric() || c == '-' || c == '.') {
+        if t.chars().all(|c| c.is_numeric() || c == '-' || c == '.')
+            && t.chars().any(|c| c.is_numeric())
+        {
             // It's probably a valid decimal-formatted number...
             match Rational::from_f64(t.parse::<f64>().unwrap()) {
                 Some(rat) => stack.push(rat),
